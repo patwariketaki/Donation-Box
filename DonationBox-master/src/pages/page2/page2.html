@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add new item details</ion-title>
+    <ion-buttons end>
+      <button (click)="logout()" color="light" *ngIf="loggedin" ion-button icon-left>
+        <ion-icon name="contact"></ion-icon>
+        Logout
+      </button>
+
+      <button (click)="login()" color="light" *ngIf="!loggedin" ion-button icon-left>
+        <ion-icon name="contact"></ion-icon>
+        Login 
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list *ngIf="loggedin">
+
+<ion-item>
+      <ion-label floating>Name of owner</ion-label>
+      <ion-input type="text" [(ngModel)]="own"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Name of Medicine/Equipment</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <!--<ion-item>
+      <ion-label floating>Mfg.Date</ion-label>
+      <ion-input type="text" [(ngModel)]="mfg_date"></ion-input>
+    </ion-item>-->
+    <ion-item>
+  <ion-label>Mfg. Date</ion-label>
+  <ion-datetime displayFormat="MMM YYYY" max="2035" min="2010" [(ngModel)]="mfg_date"></ion-datetime>
+</ion-item>
+    <!--<ion-item>
+      <ion-label floating>Exp. Date</ion-label>
+      <ion-input type="text" [(ngModel)]="exp_date"></ion-input>
+    </ion-item>-->
+<ion-item>
+  <ion-label>Exp. Date</ion-label>
+  <ion-datetime displayFormat="MMM YYYY" max="2035" min="2010" [(ngModel)]="exp_date" ></ion-datetime>
+</ion-item>
+
+    <ion-item>
+      <ion-label floating>Address</ion-label>
+      <ion-input type="text" [(ngModel)]="address"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Phone No.</ion-label>
+      <ion-input type="text" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>E-mail</ion-label>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Extra Details</ion-label>
+      <ion-input type="text" [(ngModel)]="details"></ion-input>
+    </ion-item>
+
+    <ion-navbar>
+    
+      <button ion-button (click)="takePicture()" full>
+        <ion-icon name="camera"></ion-icon>
+      </button>
+      </ion-navbar>
+  
+      <img src="{{ base64Image }}" height="300" width="300" />
+
+    <br><br><button (click)="add()" ion-button block>Add</button>
+  </ion-list>
+  <ion-card *ngIf="!loggedin">
+    <ion-card-header color="danger">
+      Please Login
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item (click)="login()">
+      <ion-icon name="key" item-left></ion-icon>
+      Login
+    </button>
+    </ion-list>
+  </ion-card>
+
+</ion-content>

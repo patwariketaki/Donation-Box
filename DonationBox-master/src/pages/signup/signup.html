@@ -1,0 +1,49 @@
+<!--
+**************************************************
+                  SIGN UP PAGE
+**************************************************
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sign Up</ion-title>
+     <ion-buttons end>
+        <button (click)="login()" color="light" ion-button icon-left >
+          <ion-icon name="arrow-back"></ion-icon>
+            Back
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+
+<ion-item>
+    <ion-label>Firstame</ion-label>
+    <ion-input type="text" [(ngModel)]="firstname"></ion-input>
+  </ion-item>
+  
+<ion-item>
+    <ion-label>Lastname</ion-label>
+    <ion-input type="text" [(ngModel)]="lastname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>E-mail</ion-label>
+    <ion-input type="text" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+</ion-list>
+
+<div padding>
+  <button (click)="signUpWithEmail()" ion-button block>SignUp</button>
+</div>
+</ion-content>

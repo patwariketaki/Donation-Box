@@ -1,0 +1,45 @@
+<!--
+**************************************************
+                 Login PAGE
+**************************************************
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+    <ion-buttons end>
+    <button (click)="page1()" color="light" ion-button icon-left >
+      <ion-icon name="arrow-back"></ion-icon>
+  Back
+</button>
+</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+
+  <ion-item>
+    <ion-label>E-mail</ion-label>
+    <ion-input type="text" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+
+</ion-list>
+
+<div padding>
+  <button (click)="signInWithEmail()" ion-button block>Login</button>
+  <button (click)="signup()" ion-button block>SignUp</button>
+</div>
+  <div class="fpbutton" (click)="forgetpassword()">
+    <button ion-button clear full >Forget Password</button>
+  </div>
+</ion-content>

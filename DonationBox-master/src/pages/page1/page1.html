@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Item Listing</ion-title>
+     <ion-buttons end>
+    <button (click)="login()" color="light" *ngIf="!loggedin" ion-button icon-left >
+      <ion-icon name="contact"></ion-icon>
+      Login
+    </button>
+    <button (click)="logout()" color="light" *ngIf="loggedin" ion-button icon-left >
+      <ion-icon name="contact"></ion-icon>
+      Logout
+    </button>
+</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+</ion-content>
+<ion-content padding>
+<ion-card *ngFor="let item of items">
+  <ion-card-content>
+  
+      <p><img src={{item.picked_image}}/></p>
+    <p><b>Name of Medicine/Equipment : </b> {{item.name}}</p>
+    <p><b>Mfg. Date :</b>{{item.mfg_date}}</p>
+    <p><b>Exp. Date :</b> {{item.exp_date}}</p>
+    <p><b>Owner name :</b> {{item.own}}</p>
+    <p><b>Address : </b>{{item.addr}}</p>
+    <p><b>Email : </b>{{item.contact.email}}</p>
+    <p><b>Phone no : </b>{{item.contact.phone}}</p>
+    <p><b>Extra details : </b>{{item.details}}</p>
+  </ion-card-content>
+  <button ion-button *ngIf="canRemove(item)" (click)="removeItem(item)" block>Remove</button>
+</ion-card>
+  <!--<button ion-button (click)="add()">Add</button>-->
+</ion-content>
